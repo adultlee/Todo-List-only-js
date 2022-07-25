@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>todolist</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="todo-list"></div>
+    <script>
+      const data = [
+        { text: "JS 복습하기", isComplete: true },
+        { text: "JS 복습하기", isComplete: false },
+        { text: "TS 복습하기", isComplete: false },
+      ];
+
+      document.querySelector("#todo-list").innerHTML = data.map(
+        (item) => "<li>" + item.text + "</li>"
+      );
+
+      console.log(document.querySelectorAll("#todo-list li"));
+      console.log(document.querySelector("#todo-list li").innerHTML);
+    </script>
+  </body>
+</html>
