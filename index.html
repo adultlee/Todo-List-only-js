@@ -13,12 +13,17 @@
         { text: "TS 복습하기", isComplete: false },
       ];
 
-      document.querySelector("#todo-list").innerHTML = data.map(
-        (item) => "<li>" + item.text + "</li>"
-      );
+      document.querySelector("#todo-list").innerHTML = data
+        .map((item) => "<li>" + item.text + "</li>")
+        .join("");
 
-      console.log(document.querySelectorAll("#todo-list li"));
-      console.log(document.querySelector("#todo-list li").innerHTML);
+      document.querySelectorAll("#todo-list li").forEach((item, i) => {
+        if (data[i].isComplete) {
+          // css style을 이렇게도 줄 수 있다.
+          item.style.color = "red";
+          item.style.textDecoration = "line-through";
+        }
+      });
     </script>
   </body>
 </html>
